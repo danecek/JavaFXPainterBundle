@@ -6,6 +6,7 @@
 package org.mu.richclient.view;
 
 import java.util.logging.Logger;
+import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.SplitPane;
@@ -24,8 +25,9 @@ import org.osgi.framework.launch.Framework;
  */
 public class JavaFXPainter extends Stage {
 
-    public JavaFXPainter() {
+    private static final Logger LOG = Logger.getLogger(JavaFXPainter.class.getName());
 
+    public JavaFXPainter() {
         setOnCloseRequest(event -> {
             shutdownPlatform();
         });
@@ -37,29 +39,23 @@ public class JavaFXPainter extends Stage {
 
         setTitle(Messages.Painter.getMess());
         setScene(scene);
-        System.out.println("JavaFXPainter");
         show();
-        
     }
 
-//    public static void main(String[] args) {
-//        Application.launch(JavaFXPainter.class, args);
-//    }
-    BundleContext context;
+    private static BundleContext context;
 
     public void setContext(BundleContext context) {
         this.context = context;
     }
 
-    private void shutdownPlatform() {
+    public static void shutdownPlatform() {
+        Platform.exit();
         Framework f = (Framework) context.getBundle(0);
         try {
             f.stop(1000);
         } catch (BundleException ex) {
             LOG.warning(ex.toString());
         }
-
     }
-    private static final Logger LOG = Logger.getLogger(JavaFXPainter.class.getName());
 
 }

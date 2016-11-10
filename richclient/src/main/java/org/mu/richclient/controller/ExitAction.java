@@ -6,6 +6,7 @@
 package org.mu.richclient.controller;
 
 import javafx.application.Platform;
+import org.mu.richclient.view.JavaFXPainter;
 import org.mu.utils.Messages;
 
 public class ExitAction extends PainterAction {
@@ -18,7 +19,7 @@ public class ExitAction extends PainterAction {
 
     @Override
     void execute() {
-        Platform.exit();
+        JavaFXPainter.shutdownPlatform();
     }
 
 }

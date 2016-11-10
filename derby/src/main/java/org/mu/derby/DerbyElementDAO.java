@@ -48,6 +48,7 @@ public class DerbyElementDAO implements ElementDAO {
                 case Circle: {
                     MyCircle c = (MyCircle) me;
                     createPs.setDouble(4, c.getRadius());
+                    createPs.setDouble(5, 0);
                     break;
                 }
                 case Rectangle: {
@@ -74,12 +75,12 @@ public class DerbyElementDAO implements ElementDAO {
                 switch (et) {
                     case Rectangle: {
                         e = new MyRectangle(new MyElementId(rs.getInt(1)),
-                                rs.getDouble(3), rs.getDouble(3), rs.getDouble(3), rs.getDouble(3));
+                                rs.getDouble(3), rs.getDouble(4), rs.getDouble(5), rs.getDouble(6));
                         break;
                     }
                     case Circle: {
                         e = new MyCircle(new MyElementId(rs.getInt(1)),
-                                rs.getDouble(3), rs.getDouble(3), rs.getDouble(3));
+                                rs.getDouble(3), rs.getDouble(4), rs.getDouble(5));
                     }
                 }
                 elems.add(e);

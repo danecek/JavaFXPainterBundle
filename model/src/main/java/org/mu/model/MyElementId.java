@@ -38,7 +38,7 @@ public class MyElementId implements Comparable<MyElementId> {
 
     @Override
     public String toString() {
-        return "ElementId{"+id + '}';
+        return Integer.toString(id);
     }
     
 

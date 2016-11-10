@@ -50,7 +50,6 @@ public class ElementTable extends TitledPane implements Observer {
     public void update(Observable o, Object o1) {
         try {
             Collection<MyElement> all = FacadeService.getService().all();
-            System.out.println(all);
             elems.setAll(all);
         } catch (PainterException ex) {
             MyAlert.error(ex);
