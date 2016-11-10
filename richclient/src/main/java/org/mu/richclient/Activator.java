@@ -3,7 +3,7 @@ package org.mu.richclient;
 import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
-import org.mu.richclient.controller.view.JavaFXPainter;
+import org.mu.richclient.view.JavaFXPainter;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 

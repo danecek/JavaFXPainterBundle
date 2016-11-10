@@ -3,12 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.mu.richclient.controller.view;
+package org.mu.richclient.view;
 
 import java.util.logging.Logger;
 import javafxpainter.controller.PainterMenubar;
 import javafxpainter.controller.PainterToolBar;
-import javafxpainter.view.ElementTable;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.SplitPane;
@@ -38,7 +37,9 @@ public class JavaFXPainter extends Stage {
 
         setTitle(Messages.Painter.getMess());
         setScene(scene);
+        System.out.println("JavaFXPainter");
         show();
+        
     }
 
 //    public static void main(String[] args) {

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.mu.richclient.controller.view;
+package org.mu.richclient.view;
 
 import java.util.Observable;
 import java.util.Observer;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javafxpainter.view;
+package org.mu.richclient.view;
 
 import java.util.Collection;
 import java.util.Observable;
@@ -20,7 +20,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import org.mu.business.FacadeService;
 import org.mu.model.MyElement;
 import org.mu.richclient.MyObservable;
-import org.mu.richclient.controller.view.MyAlert;
+import org.mu.richclient.view.MyAlert;
 import org.mu.utils.Messages;
 import org.mu.utils.PainterException;
 
