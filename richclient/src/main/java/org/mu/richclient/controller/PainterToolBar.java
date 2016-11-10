@@ -6,6 +6,9 @@
 package javafxpainter.controller;
 
 import javafx.scene.control.ToolBar;
+import org.mu.model.ElementType;
+import org.mu.richclient.Options;
+import org.mu.richclient.Utils;
 import org.mu.richclient.controller.CreateRectangleAction;
 import org.mu.richclient.controller.ExitAction;
 
@@ -16,7 +19,10 @@ import org.mu.richclient.controller.ExitAction;
 public class PainterToolBar extends ToolBar {
 
     public PainterToolBar() {
-        super(ExitAction.INST.genButton(), 
+        super(ExitAction.INST.genButton(),
                 CreateRectangleAction.INST.genButton());
+        getItems().addAll(Utils.genRadioButtons(Options.INST.elementTypeProperty(),
+                ElementType.class, Options.INST.getElementType()));
+
     }
 }

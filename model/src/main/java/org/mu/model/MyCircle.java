@@ -14,13 +14,15 @@ public class MyCircle extends MyElement {
     protected double radius;
 
     public MyCircle(MyElementId id, double refX, double refY, double radius) {
-        super(id, refX, refY);
+        super(id, ElementType.Circle, refX, refY);
         this.radius = radius;
     }
 
-    /**
-     * @return the radius
-     */
+    public MyCircle(double refX, double refY, double radius) {
+        super(ElementType.Circle, refX, refY);
+        this.radius = radius;
+    }
+
     public double getRadius() {
         return radius;
     }

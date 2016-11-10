@@ -11,24 +11,40 @@ package org.mu.model;
  */
 public class MyElement {
 
-    private final MyElementId id;
-    protected double refX;
-    protected double refY;
-    
-
-    public MyElement(MyElementId id, double refX, double refY) {
+    /**
+     * @param id the id to set
+     */
+    public void setId(MyElementId id) {
         this.id = id;
+    }
+
+    /**
+     * @return the elementType
+     */
+    public ElementType getElementType() {
+        return elementType;
+    }
+
+    protected MyElementId id;
+    protected final ElementType elementType;
+    protected final double refX;
+    protected final double refY;
+
+    public MyElement(ElementType elementType, double refX, double refY) {
+        this.elementType = elementType;
         this.refX = refX;
         this.refY = refY;
+    }
+
+    public MyElement(MyElementId id, ElementType elementType, double refX, double refY) {
+        this(elementType, refX, refY);
+        this.id = id;
     }
 
     public double getRefX() {
         return refX;
     }
 
-    /**
-     * @return the refY
-     */
     public double getRefY() {
         return refY;
     }

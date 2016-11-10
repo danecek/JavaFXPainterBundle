@@ -12,6 +12,7 @@ import java.util.Observable;
  * @author Administrator
  */
 public class MyObservable extends Observable {
+
     public static MyObservable INST = new MyObservable();
 
     private MyObservable() {
@@ -21,6 +22,5 @@ public class MyObservable extends Observable {
         setChanged();
         notifyObservers();
     }
-    
-    
+
 }

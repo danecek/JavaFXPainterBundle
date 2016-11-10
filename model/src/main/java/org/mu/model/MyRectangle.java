@@ -11,7 +11,13 @@ public class MyRectangle extends MyElement {
     protected double height;
 
     public MyRectangle(MyElementId id, double refX, double refY, double width, double height) {
-        super(id, refX, refY);
+        super(id, ElementType.Rectangle, refX, refY);
+        this.width = width;
+        this.height = height;
+    }
+
+    public MyRectangle(double refX, double refY, double width, double height) {
+        super(ElementType.Rectangle, refX, refY);
         this.width = width;
         this.height = height;
     }

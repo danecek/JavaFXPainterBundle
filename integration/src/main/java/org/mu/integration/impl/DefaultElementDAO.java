@@ -22,6 +22,7 @@ public class DefaultElementDAO implements ElementDAO {
     public static ElementDAO INST = new DefaultElementDAO();
 
     private final Map<MyElementId, MyElement> elems = new HashMap<>();
+    int counter;
 
     private DefaultElementDAO() {
     }
@@ -29,6 +30,7 @@ public class DefaultElementDAO implements ElementDAO {
 
     @Override
     public void create(MyElement elm) {
+        elm.setId(new MyElementId(counter++));
         elems.put(elm.getId(), elm);
     }
 

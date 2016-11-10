@@ -6,6 +6,9 @@
 package org.mu.richclient.controller;
 
 import javafx.scene.control.Menu;
+import org.mu.model.ElementType;
+import org.mu.richclient.Options;
+import org.mu.richclient.Utils;
 import org.mu.utils.Messages;
 
 /**
@@ -18,6 +21,8 @@ public class FileMenu extends Menu {
         super(Messages.File.getMess());
         getItems().addAll(ExitAction.INST.genMenuItem(),
                 CreateRectangleAction.INST.genMenuItem());
+        getItems().addAll(Utils.genRadioMenuItems(Options.INST.elementTypeProperty(),
+                ElementType.class, Options.INST.getElementType()));
     }
-    
+
 }

@@ -12,6 +12,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.mu.model.ElementType;
 import org.mu.model.MyElement;
 import org.mu.model.MyElementId;
 
@@ -47,7 +48,7 @@ public class FacadeServiceTest {
     @Test
     public void testCreate() throws Exception {
         System.out.println("create all");
-        MyElement elm = new MyElement(new MyElementId(0), 0, 0);
+        MyElement elm = new MyElement(new MyElementId(0), ElementType.Circle, 0, 0);
         FacadeService instance = FacadeService.getService();
         instance.create(elm);
         Collection<MyElement> elems = instance.all();
