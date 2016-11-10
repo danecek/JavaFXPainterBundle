@@ -14,7 +14,9 @@
         <module>model</module>
         <module>utils</module>
         <module>integration</module>
-    </modules>
+    <module>business</module>
+    <module>richclient</module>
+  </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>

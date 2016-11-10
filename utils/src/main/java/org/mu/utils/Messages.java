@@ -27,7 +27,7 @@ public enum Messages {
             String mess = rb.getString(this.name());
             return MessageFormat.format(mess, pars);
         } catch (MissingResourceException ex) {
-            LOG.log(Level.WARNING, "", ex);
+    //        LOG.log(Level.WARNING, "", ex);
             return name().replace('_', ' ');
         }
     }
