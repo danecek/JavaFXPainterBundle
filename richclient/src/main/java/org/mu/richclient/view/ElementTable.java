@@ -8,8 +8,6 @@ package org.mu.richclient.view;
 import java.util.Collection;
 import java.util.Observable;
 import java.util.Observer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
@@ -20,31 +18,34 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import org.mu.business.FacadeService;
 import org.mu.model.MyElement;
 import org.mu.richclient.MyObservable;
-import org.mu.richclient.view.MyAlert;
 import org.mu.utils.Messages;
 import org.mu.utils.PainterException;
 
 public class ElementTable extends TitledPane implements Observer {
-    
+
     ObservableList<MyElement> elems = FXCollections.observableArrayList();
-    
+
     public ElementTable() {
         MyObservable.INST.addObserver(this);
         setText(Messages.Elements.getMess());
         setContent(createContent());
     }
-    
+
     private Node createContent() {
         TableView tv = new TableView();
-        TableColumn<MyElement, Double> xCol = new TableColumn<>("X");
-        TableColumn<MyElement, Double> yCol = new TableColumn<>("Y");
+        TableColumn<MyElement, Double> idCol = new TableColumn<>(Messages.Id.getMess());
+        TableColumn<MyElement, Double> typeCol = new TableColumn<>(Messages.Type.getMess());
+        TableColumn<MyElement, Double> xCol = new TableColumn<>(Messages.X.getMess());
+        TableColumn<MyElement, Double> yCol = new TableColumn<>(Messages.Y.getMess());
+        idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
+        typeCol.setCellValueFactory(new PropertyValueFactory<>("elementType"));
         xCol.setCellValueFactory(new PropertyValueFactory<>("refX"));
         yCol.setCellValueFactory(new PropertyValueFactory<>("refY"));
-        tv.getColumns().addAll(xCol, yCol);
+        tv.getColumns().addAll(idCol, typeCol, xCol, yCol);
         tv.setItems(elems);
         return tv;
     }
-    
+
     @Override
     public void update(Observable o, Object o1) {
         try {
@@ -55,5 +56,5 @@ public class ElementTable extends TitledPane implements Observer {
             MyAlert.error(ex);
         }
     }
-    
+
 }

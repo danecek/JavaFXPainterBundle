@@ -9,7 +9,7 @@ import javafx.application.Platform;
 import org.mu.utils.Messages;
 
 public class ExitAction extends PainterAction {
-    
+
     public static ExitAction INST = new ExitAction();
 
     private ExitAction() {

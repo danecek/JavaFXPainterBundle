@@ -23,4 +23,9 @@ public class FacadeServiceDefault extends FacadeService {
         return DAOFactory.service().getElementDAO().all();
     }
 
+    @Override
+    public void clearAll() throws PainterException {
+        DAOFactory.service().getElementDAO().clearAll();
+    }
+
 }

@@ -16,6 +16,9 @@
         <module>integration</module>
     <module>business</module>
     <module>richclient</module>
+    <module>derby</module>
+    <module>protocol</module>
+    <module>proxy</module>
   </modules>
     <dependencyManagement>
         <dependencies>

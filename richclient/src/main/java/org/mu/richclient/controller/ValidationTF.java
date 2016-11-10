@@ -3,12 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javafxpainter.controller;
+package org.mu.richclient.controller;
 
 import javafx.event.EventHandler;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
-import org.mu.richclient.controller.CreateRectDialog;
 
 /**
  *

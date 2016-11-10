@@ -15,4 +15,6 @@ public interface ElementDAO {
 
     List<MyElement> all() throws PainterException;
 
+    public void clearAll()  throws PainterException;
+
 }

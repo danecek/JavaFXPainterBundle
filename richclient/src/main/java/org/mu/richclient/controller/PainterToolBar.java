@@ -3,14 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javafxpainter.controller;
+package org.mu.richclient.controller;
 
+import javafx.scene.control.Separator;
 import javafx.scene.control.ToolBar;
 import org.mu.model.ElementType;
 import org.mu.richclient.Options;
 import org.mu.richclient.Utils;
-import org.mu.richclient.controller.CreateRectangleAction;
-import org.mu.richclient.controller.ExitAction;
 
 /**
  *
@@ -20,7 +19,8 @@ public class PainterToolBar extends ToolBar {
 
     public PainterToolBar() {
         super(ExitAction.INST.genButton(),
-                CreateRectangleAction.INST.genButton());
+                CreateRectangleAction.INST.genButton(), ClearAllAction.INST.genButton());
+        getItems().add(new Separator());
         getItems().addAll(Utils.genRadioButtons(Options.INST.elementTypeProperty(),
                 ElementType.class, Options.INST.getElementType()));
 

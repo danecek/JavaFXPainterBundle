@@ -8,7 +8,6 @@ package org.mu.utils;
 import java.text.MessageFormat;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -17,7 +16,7 @@ import java.util.logging.Logger;
  */
 public enum Messages {
 
-    Elements, Graph, Painter, Exit, File, Create_Rectangle, Invalid;
+    Elements, Graph, Painter, Exit, File, Create_Rectangle, Invalid, Id, Type, X, Y, Clear_all;
     private static final Logger LOG = Logger.getLogger(Messages.class.getName());
 
     private static ResourceBundle rb = ResourceBundle.getBundle("org.mu.utils.bundle");
@@ -27,7 +26,7 @@ public enum Messages {
             String mess = rb.getString(this.name());
             return MessageFormat.format(mess, pars);
         } catch (MissingResourceException ex) {
-    //        LOG.log(Level.WARNING, "", ex);
+            //        LOG.log(Level.WARNING, "", ex);
             return name().replace('_', ' ');
         }
     }

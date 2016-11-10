@@ -25,4 +25,5 @@ public abstract class FacadeService {
 
     public abstract Collection<MyElement> all()  throws PainterException;
 
+    public abstract void clearAll() throws PainterException;
 }

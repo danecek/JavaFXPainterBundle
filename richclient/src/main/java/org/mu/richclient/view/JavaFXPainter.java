@@ -6,13 +6,13 @@
 package org.mu.richclient.view;
 
 import java.util.logging.Logger;
-import javafxpainter.controller.PainterMenubar;
-import javafxpainter.controller.PainterToolBar;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.mu.richclient.controller.PainterMenubar;
+import org.mu.richclient.controller.PainterToolBar;
 import org.mu.utils.Messages;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleException;

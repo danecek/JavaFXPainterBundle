@@ -14,7 +14,6 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import javafxpainter.controller.ValidationTF;
 import org.mu.business.FacadeService;
 import org.mu.model.MyElementId;
 import org.mu.model.MyRectangle;
@@ -64,9 +63,9 @@ public class CreateRectDialog extends Dialog<ButtonType> {
             try {
                 ok();
             } catch (PainterException ex) {
-               Alert a = new Alert(Alert.AlertType.ERROR);
-               a.setContentText(ex.toString());
-               a.showAndWait();
+                Alert a = new Alert(Alert.AlertType.ERROR);
+                a.setContentText(ex.toString());
+                a.showAndWait();
             }
         }
     }

@@ -1,9 +1,7 @@
-package org.mu.richclient;
+package org.mu.derby;
 
 import java.util.logging.Logger;
-import javafx.application.Platform;
-import javafx.embed.swing.JFXPanel;
-import org.mu.richclient.view.JavaFXPainter;
+import org.mu.integration.DAOFactory;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
@@ -14,16 +12,8 @@ public class Activator implements BundleActivator {
     @Override
     public void start(BundleContext context) throws Exception {
         LOG.info("");
-        new JFXPanel(); // start FX platformy
-        Platform.runLater(new Runnable() {
-
-            @Override
-            public void run() {
-                JavaFXPainter main = new JavaFXPainter();
-                main.setContext(context);
-                MyObservable.INST.changed();
-            }
-        });
+        context.registerService(DAOFactory.class,
+                new DerbyDAOFactory(), null);
     }
 
     @Override

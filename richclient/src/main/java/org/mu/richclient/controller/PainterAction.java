@@ -7,30 +7,30 @@ package org.mu.richclient.controller;
 
 import java.util.Observable;
 import java.util.Observer;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import org.mu.richclient.MyObservable;
 
-/**
- *
- * @author Administrator
- */
 public abstract class PainterAction implements Observer {
 
     String name;
-    private MenuItem mi;
-    Button btn;
+ //   private MenuItem mi;
+ //   Button btn;
+    SimpleBooleanProperty disable = new SimpleBooleanProperty(false);
 
     public Button genButton() {
-        btn = new Button(name);
+        Button btn = new Button(name);
         btn.setOnAction(event -> {
             execute();
         });
+        btn.disableProperty().bind(disable);
         return btn;
     }
 
-    MenuItem genMenuItem() {
-        mi = new MenuItem(name);
+    public MenuItem genMenuItem() {
+        MenuItem mi = new MenuItem(name);
+        mi.disableProperty().bind(disable);
         mi.setOnAction(event -> {
             execute();
         });
@@ -50,13 +50,13 @@ public abstract class PainterAction implements Observer {
 
     @Override
     public void update(Observable o, Object o1) {
-        boolean disable = checkDisable();
-        if (mi != null) {
-            mi.setDisable(disable);
-        }
-        if (btn != null) {
-            btn.setDisable(disable);
-        }
+        disable.setValue(checkDisable());
+//        if (mi != null) {
+//            mi.setDisable(disable);
+//        }
+//        if (btn != null) {
+//            btn.setDisable(disable);
+//        }
 
     }
 

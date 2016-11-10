@@ -12,6 +12,7 @@ import java.util.Map;
 import org.mu.integration.ElementDAO;
 import org.mu.model.MyElement;
 import org.mu.model.MyElementId;
+import org.mu.utils.PainterException;
 
 /**
  *
@@ -37,6 +38,11 @@ public class DefaultElementDAO implements ElementDAO {
     @Override
     public List<MyElement> all() {
         return new ArrayList<>(elems.values());
+    }
+
+    @Override
+    public void clearAll() throws PainterException {
+         elems.clear();
     }
 
 }
