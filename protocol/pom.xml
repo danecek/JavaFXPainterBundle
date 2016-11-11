@@ -32,7 +32,8 @@
                 <configuration>
                     <instructions>
                         <Bundle-Activator>org.mu.protocol.Activator</Bundle-Activator>
-                        <Export-Package />
+                        <Export-Package >org.mu.protocol</Export-Package>
+                        <Private-Package>org.mu.protocol.*</Private-Package>
                     </instructions>
                 </configuration>
             </plugin>

@@ -3,20 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.mu.richclient.view;
+package org.mu.richclient;
 
+import javafx.application.Platform;
 import javafx.scene.control.Alert;
 
 public class MyAlert {
-    
+
     public static void error(Exception ex) {
         error(ex.toString());
     }
-    
+
     public static void error(String mess) {
-        Alert a = new Alert(Alert.AlertType.ERROR);
-        a.setContentText(mess);
-        a.showAndWait();
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                Alert a = new Alert(Alert.AlertType.ERROR);
+                a.setContentText(mess);
+                a.showAndWait();
+            }
+        });
     }
-    
+
 }

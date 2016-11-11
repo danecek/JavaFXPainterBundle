@@ -32,7 +32,8 @@
                 <configuration>
                     <instructions>
                         <Bundle-Activator>org.mu.richclient.Activator</Bundle-Activator>
-                        <Export-Package />
+                        <Export-Package >org.mu.richclient</Export-Package>
+                        <Private-Package>org.mu.richclient.*</Private-Package>
                     </instructions>
                 </configuration>
             </plugin>

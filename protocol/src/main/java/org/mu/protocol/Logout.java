@@ -6,25 +6,17 @@
 package org.mu.protocol;
 
 import org.mu.business.FacadeService;
-import org.mu.model.MyElement;
 import org.mu.utils.PainterException;
 
 /**
  *
  * @author Administrator
  */
-public class CreateCommand extends Command {
-
-    private final MyElement elm;
-
-    public CreateCommand(MyElement elm) {
-        this.elm = elm;
-    }
+public class Logout extends Command {
 
     @Override
     public Object execute(FacadeService facadeService) throws PainterException {
-        facadeService.create(elm);
-        return OK;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
 }

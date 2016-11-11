@@ -19,6 +19,7 @@
     <module>derby</module>
     <module>protocol</module>
     <module>proxy</module>
+    <module>server</module>
   </modules>
     <dependencyManagement>
         <dependencies>

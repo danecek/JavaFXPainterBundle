@@ -5,12 +5,19 @@
  */
 package org.mu.protocol;
 
+import java.io.Serializable;
 import org.mu.business.FacadeService;
 import org.mu.utils.PainterException;
 
-public abstract class Command {
+public abstract class Command implements Serializable {
 
-    static final String OK = "OK";
+    public static final String OK = "OK";
 
-    abstract Object execute(FacadeService facadeService) throws PainterException;
+    public abstract Object execute(FacadeService facadeService) throws PainterException;
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
+    
 }

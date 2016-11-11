@@ -5,11 +5,12 @@
  */
 package org.mu.richclient.controller;
 
+import org.mu.richclient.PainterAction;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.mu.business.FacadeService;
 import org.mu.richclient.MyObservable;
-import org.mu.richclient.view.MyAlert;
+import org.mu.richclient.MyAlert;
 import org.mu.utils.Messages;
 import org.mu.utils.PainterException;
 
@@ -26,7 +27,7 @@ public class ClearAllAction extends PainterAction {
     }
 
     @Override
-    void execute() {
+    public void execute() {
         try {
             FacadeService.getService().clearAll();
             MyObservable.INST.changed();
@@ -36,7 +37,7 @@ public class ClearAllAction extends PainterAction {
     }
 
     @Override
-    boolean checkDisable() {
+    public boolean checkDisable() {
         try {
             return FacadeService.getService().all().isEmpty();
         } catch (PainterException ex) {

@@ -5,6 +5,7 @@
  */
 package org.mu.richclient.controller;
 
+import org.mu.richclient.PainterAction;
 import org.mu.utils.Messages;
 
 
@@ -17,7 +18,7 @@ public class CreateRectangleAction extends PainterAction {
     }
 
     @Override
-    void execute() {
+    public void execute() {
         new CreateRectDialog().execute();
     }
 

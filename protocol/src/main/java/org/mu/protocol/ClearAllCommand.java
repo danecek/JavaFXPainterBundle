@@ -11,7 +11,7 @@ import org.mu.utils.PainterException;
 public class ClearAllCommand extends Command {
 
     @Override
-    Object execute(FacadeService facadeService) throws PainterException {
+    public Object execute(FacadeService facadeService) throws PainterException {
         facadeService.clearAll();
         return OK;
     }

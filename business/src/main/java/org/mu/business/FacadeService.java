@@ -9,21 +9,34 @@ import java.util.Collection;
 import org.mu.business.impl.FacadeServiceDefault;
 import org.mu.model.MyElement;
 import org.mu.utils.PainterException;
+import org.osgi.util.tracker.ServiceTracker;
 
 public abstract class FacadeService {
+
+    /**
+     * @param aSt the st to set
+     */
+    public static void setSt(ServiceTracker<FacadeService, FacadeService> aSt) {
+        st = aSt;
+    }
+
+    protected static ServiceTracker<FacadeService, FacadeService> st;
 
     private static FacadeService service;
 
     public static FacadeService getService() {
         if (service == null) {
-            service = new FacadeServiceDefault();
+            service = st.getService();
+            if (service == null) {
+                service = new FacadeServiceDefault();
+            }
         }
         return service;
     }
 
     public abstract void create(MyElement elm) throws PainterException;
 
-    public abstract Collection<MyElement> all()  throws PainterException;
+    public abstract Collection<MyElement> all() throws PainterException;
 
     public abstract void clearAll() throws PainterException;
 }

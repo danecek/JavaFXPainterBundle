@@ -3,20 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.mu.richclient.controller;
+package org.mu.richclient;
 
 import java.util.Observable;
 import java.util.Observer;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
-import org.mu.richclient.MyObservable;
 
 public abstract class PainterAction implements Observer {
 
     String name;
- //   private MenuItem mi;
- //   Button btn;
     SimpleBooleanProperty disable = new SimpleBooleanProperty(false);
 
     public Button genButton() {
@@ -37,27 +34,20 @@ public abstract class PainterAction implements Observer {
         return mi;
     }
 
-    abstract void execute();
+    public abstract void execute();
 
     public PainterAction(String name) {
         this.name = name;
         MyObservable.INST.addObserver(this);
     }
 
-    boolean checkDisable() {
+    public boolean checkDisable() {
         return false;
     }
 
     @Override
     public void update(Observable o, Object o1) {
         disable.setValue(checkDisable());
-//        if (mi != null) {
-//            mi.setDisable(disable);
-//        }
-//        if (btn != null) {
-//            btn.setDisable(disable);
-//        }
-
     }
 
 }

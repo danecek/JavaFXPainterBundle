@@ -15,4 +15,7 @@ public class PainterException extends Exception {
         super(thrwbl);
     }
 
+    public PainterException(String mess) {
+        super(mess);
+    }
 }

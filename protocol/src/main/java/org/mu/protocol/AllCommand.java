@@ -14,6 +14,7 @@ import org.mu.utils.PainterException;
  */
 public class AllCommand extends Command {
 
+    @Override
     public Object execute(FacadeService facadeService) throws PainterException {
        return  facadeService.all();
     }

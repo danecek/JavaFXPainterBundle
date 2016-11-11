@@ -7,24 +7,28 @@ package org.mu.integration;
 
 import org.mu.integration.impl.DefaultDAOFactory;
 import org.osgi.framework.BundleContext;
+import org.osgi.util.tracker.ServiceTracker;
 
 public abstract class DAOFactory {
 
+    /**
+     * @param aSt the st to set
+     */
+    public static void setSt(ServiceTracker<DAOFactory, DAOFactory> aSt) {
+        st = aSt;
+    }
+
     static DAOFactory service;
-    static BundleContext context;
+    protected static ServiceTracker<DAOFactory, DAOFactory> st;
 
     public static DAOFactory service() {
         if (service == null) {
-            service = context.getService(context.getServiceReference(DAOFactory.class));
+            service = st.getService();
             if (service == null) {
                 service = new DefaultDAOFactory();
             }
         }
         return service;
-    }
-
-    static void setContext(BundleContext context) {
-        DAOFactory.context = context;
     }
 
     public abstract ElementDAO getElementDAO();

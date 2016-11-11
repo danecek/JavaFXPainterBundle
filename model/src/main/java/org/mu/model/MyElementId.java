@@ -1,7 +1,9 @@
 package org.mu.model;
 
+import java.io.Serializable;
 
-public class MyElementId implements Comparable<MyElementId> {
+
+public class MyElementId implements Comparable<MyElementId>, Serializable {
 
     private final int id;
 

@@ -5,6 +5,7 @@
  */
 package org.mu.richclient.view;
 
+import org.mu.richclient.MyAlert;
 import java.util.Collection;
 import java.util.Observable;
 import java.util.Observer;

@@ -5,11 +5,13 @@
  */
 package org.mu.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Administrator
  */
-public class MyElement {
+public class MyElement implements Serializable {
 
     /**
      * @param id the id to set

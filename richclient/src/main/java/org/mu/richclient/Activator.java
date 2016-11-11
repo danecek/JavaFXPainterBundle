@@ -3,7 +3,6 @@ package org.mu.richclient;
 import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
-import org.mu.richclient.view.JavaFXPainter;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
@@ -21,7 +20,7 @@ public class Activator implements BundleActivator {
             public void run() {
                 JavaFXPainter main = new JavaFXPainter();
                 main.setContext(context);
-                MyObservable.INST.changed();
+              //  MyObservable.INST.changed();
             }
         });
     }
