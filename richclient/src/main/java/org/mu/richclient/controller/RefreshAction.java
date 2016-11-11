@@ -16,12 +16,12 @@ import org.mu.utils.PainterException;
  *
  * @author Administrator
  */
-public class ClearAllAction extends PainterAction {
+public class RefreshAction extends PainterAction {
+    
+    public static RefreshAction INST = new RefreshAction();
 
-    public static ClearAllAction INST = new ClearAllAction();
-
-    public ClearAllAction() {
-        super(Messages.Clear_all.getMess());
+    public RefreshAction() {
+        super(Messages.Refresh.getMess());
     }
 
     @Override
@@ -38,7 +38,7 @@ public class ClearAllAction extends PainterAction {
     public boolean checkDisable() {
         try {
             FacadeService facade = FacadeService.getService();
-            return facade.isConnected() && facade.all().isEmpty();
+            return facade.isConnected() && FacadeService.getService().all().isEmpty();
         } catch (PainterException ex) {
             MyAlert.error(ex);
         }

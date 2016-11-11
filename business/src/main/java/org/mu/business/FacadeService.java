@@ -39,4 +39,6 @@ public abstract class FacadeService {
     public abstract Collection<MyElement> all() throws PainterException;
 
     public abstract void clearAll() throws PainterException;
+
+    public abstract boolean isConnected();
 }

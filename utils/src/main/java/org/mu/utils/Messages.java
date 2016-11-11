@@ -16,7 +16,9 @@ import java.util.logging.Logger;
  */
 public enum Messages {
 
-    Elements, Graph, Painter, Exit, File, Create_Rectangle, Invalid, Id, Type, X, Y, Clear_all, Not_connected, Connect, Disconnect, Connection, Host, Port, Invalid_host, Invalid_port;
+    Elements, Graph, Painter, Exit, File, Create_Rectangle, Invalid, Id, Type, X, Y, Clear_all, 
+    Not_connected, Connect, Disconnect, Connection, Host, Port, Invalid_host, Invalid_port,
+    Refresh;
     private static final Logger LOG = Logger.getLogger(Messages.class.getName());
 
     private static ResourceBundle rb = ResourceBundle.getBundle("org.mu.utils.bundle");

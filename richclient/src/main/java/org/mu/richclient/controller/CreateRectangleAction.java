@@ -5,6 +5,7 @@
  */
 package org.mu.richclient.controller;
 
+import org.mu.business.FacadeService;
 import org.mu.richclient.PainterAction;
 import org.mu.utils.Messages;
 
@@ -21,5 +22,12 @@ public class CreateRectangleAction extends PainterAction {
     public void execute() {
         new CreateRectDialog().execute();
     }
+
+    @Override
+    public boolean checkDisable() {
+        return FacadeService.getService().isConnected();
+    }
+    
+    
 
 }

@@ -8,12 +8,12 @@ package org.mu.proxy;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.net.InetAddress;
 import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.mu.protocol.Command;
 import org.mu.protocol.Logout;
+import org.mu.richclient.MyAlert;
 import org.mu.utils.Messages;
 import org.mu.utils.PainterException;
 
@@ -33,7 +33,6 @@ public class Connection {
     }
 
     public void connect(String ia, int port) throws IOException {
-        LOG.info("[" + ia + "]" + port);
         s = new Socket(ia, port);
         s.setSoTimeout(3000);
         ois = new ObjectInputStream(s.getInputStream());
@@ -48,7 +47,7 @@ public class Connection {
             sent(new Logout());
             this.s = null;
         } catch (PainterException ex) {
-            Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
+            MyAlert.error(ex);
         } catch (IOException ex) {
             Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
         }

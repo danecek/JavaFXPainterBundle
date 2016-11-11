@@ -28,4 +28,9 @@ public class FacadeServiceDefault extends FacadeService {
         DAOFactory.service().getElementDAO().clearAll();
     }
 
+    @Override
+    public boolean isConnected() {
+        return true;
+    }
+
 }

@@ -37,7 +37,6 @@ public class GraphPane extends TitledPane implements Observer {
         setText(Messages.Graph.getMess());
         setOnMousePressed(event -> {
             press(event);
-
         });
         setOnMouseDragged(event -> {
             drag(event);
@@ -52,7 +51,6 @@ public class GraphPane extends TitledPane implements Observer {
         try {
             getChildren().setAll(createShapes());
         } catch (PainterException ex) {
-            Logger.getLogger(GraphPane.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

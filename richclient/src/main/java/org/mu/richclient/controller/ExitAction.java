@@ -19,7 +19,7 @@ public class ExitAction extends PainterAction {
 
     @Override
     public void execute() {
-        JavaFXPainter.shutdownPlatform();
+      //  JavaFXPainter.INST.shutdownPlatform();
     }
 
 }

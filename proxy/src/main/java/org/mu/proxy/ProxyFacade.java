@@ -34,4 +34,9 @@ public class ProxyFacade extends FacadeService {
         Connection.INST.sent(new ClearAllCommand());
     }
 
+    @Override
+    public boolean isConnected() {
+        return Connection.INST.isConnected();
+    }
+
 }
